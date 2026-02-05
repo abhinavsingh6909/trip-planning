@@ -3,11 +3,11 @@ import Card from "./Card";
 
 function Tours({ tours, removeTourHandler }) {
   return (
-    <div>
+    <div className="container">
       <div>
-        <h2>Plan With Abhinav</h2>
+        <h2 className="title">Plan With Abhinav</h2>
       </div>
-      <div>
+      <div className="cards">
         {tours.map((tour) => {
           return <Card {...tour} removeTourHandler={removeTourHandler}></Card>;
         })}
