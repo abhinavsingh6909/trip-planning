@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function Card({ id, name, info, image, price }) {
-  const description = `${info.substring(0, 200)}...`;
-
+function Card({ id, name, info, image, price, removeTourHandler }) {
   const [readmore, setReadMore] = useState(true);
+
+  const description = readmore ? `${info.substring(0, 200)}...` : info;
 
   function readmoreHandler() {
     setReadMore(!readmore);
   }
 
-  reurn(
+  return (
     <div className="card">
       <img src={image} alt="" className="image"></img>
       <div className="tour-box">
@@ -25,10 +25,10 @@ function Card({ id, name, info, image, price }) {
           </span>
         </div>
       </div>
-      <button className="btn-red" onClick={removeTourHandler}>
+      <button className="btn-red" onClick={() => removeTourHandler(id)}>
         Not Intrested
       </button>
-    </div>,
+    </div>
   );
 }
 

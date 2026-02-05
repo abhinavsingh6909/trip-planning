@@ -1,4 +1,7 @@
-function Tours({ tours }) {
+import { useState } from "react";
+import Card from "./Card";
+
+function Tours({ tours, removeTourHandler }) {
   return (
     <div>
       <div>
@@ -6,7 +9,7 @@ function Tours({ tours }) {
       </div>
       <div>
         {tours.map((tour) => {
-          return <Card {...tour}></Card>;
+          return <Card {...tour} removeTourHandler={removeTourHandler}></Card>;
         })}
       </div>
     </div>
